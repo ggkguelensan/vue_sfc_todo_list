@@ -3,7 +3,7 @@
     <h1>TODO list</h1>
     <ToDoInput/>
     <ToDoCntl/>
-    <ToDoList/>
+    <ToDoList :todolist="todolist"/>
   </div>
 </template>
 
@@ -21,6 +21,13 @@ export default {
   },
   data () {
     return {
+      todolist: [
+        {id: 0, text: 'Uno'},
+        {id: 1, text: 'Duo'},
+        {id: 2, text: 'Tre'},
+        {id: 3, text: 'Apple'},
+        {id: 4, text: 'Hello'}
+      ]
     }
   }
 }

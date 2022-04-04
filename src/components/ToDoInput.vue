@@ -1,14 +1,20 @@
 <template>
   <div class="todoinput container">
-      <p>todoinput</p>
+      <input type="text" placeholder="TODO item input" @keydown.enter="new_item">
+      <button :disabled="is_disables">+</button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'ToDoInput',
+  methods: {
+    new_item: function () {
+    }
+  },
   data () {
     return {
+      is_disables: true
     }
   }
 }

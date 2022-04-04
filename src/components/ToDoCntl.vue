@@ -1,6 +1,8 @@
 <template>
   <div class="todocntl container">
-      <p>todocntl</p>
+      <button>Active</button>
+      <button>All</button>
+      <button>Completed</button>
   </div>
 </template>
 

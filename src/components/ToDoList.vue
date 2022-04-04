@@ -1,15 +1,17 @@
 <template>
   <div class="todolist container">
-      <p>todoitem 1</p>
-      <p>todoitem 2</p>
-      <p>todoitem 3</p>
-      <p>todoitem 4</p>
+    <ToDoItem v-for="item in todolist" :item="item" :key="item.id"/>
   </div>
 </template>
 
 <script>
+import ToDoItem from './ToDoItem'
 export default {
   name: 'ToDoList',
+  props: ['todolist'],
+  components: {
+    ToDoItem: ToDoItem
+  },
   data () {
     return {
     }
@@ -22,9 +24,5 @@ export default {
 ul {
   list-style-type: none;
   padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
 }
 </style>
