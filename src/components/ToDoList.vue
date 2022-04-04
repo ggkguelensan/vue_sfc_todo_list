@@ -5,17 +5,17 @@
 </template>
 
 <script>
-import ToDoItem from "./ToDoItem";
+import ToDoItem from './ToDoItem'
 export default {
-  name: "ToDoList",
-  props: ["todolist"],
+  name: 'ToDoList',
+  props: ['todolist'],
   components: {
     ToDoItem: ToDoItem
   },
-  data() {
-    return {};
+  data () {
+    return {}
   }
-};
+}
 </script>
 
 <style scoped>

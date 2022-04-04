@@ -12,14 +12,14 @@
 
 <script>
 export default {
-  name: "ToDoInput",
-  props: ["inputedtext"],
-  data() {
+  name: 'ToDoInput',
+  props: ['inputedtext'],
+  data () {
     return {
       is_disables: false
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped></style>

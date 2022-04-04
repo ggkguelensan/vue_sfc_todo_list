@@ -8,11 +8,11 @@
 
 <script>
 export default {
-  name: "ToDoCntl",
-  data() {
-    return {};
+  name: 'ToDoCntl',
+  data () {
+    return {}
   }
-};
+}
 </script>
 
 <style scoped></style>

@@ -8,12 +8,12 @@
 
 <script>
 export default {
-  name: "ToDoItem",
-  props: ["item"],
-  data() {
-    return {};
+  name: 'ToDoItem',
+  props: ['item'],
+  data () {
+    return {}
   }
-};
+}
 </script>
 
 <style scoped>
