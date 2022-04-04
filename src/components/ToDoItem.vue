@@ -1,22 +1,21 @@
 <template>
   <div class="todoitem container">
-      <p>{{item.text}}</p>
-      <button>X</button>
+    <input type="checkbox" v-model="completed" @change="doneEdit" />
+    <p>{{ item.text }}</p>
+    <button>X</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ToDoItem',
-  props: ['item'],
-  data () {
-    return {
-    }
+  name: "ToDoItem",
+  props: ["item"],
+  data() {
+    return {};
   }
-}
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 li {
   display: inline-block;

@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <ToDo/>
+    <ToDo />
   </div>
 </template>
 
 <script>
-import ToDo from './components/ToDo'
+import ToDo from "./components/ToDo";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     ToDo: ToDo
   }
-}
+};
 </script>
 
 <style>
@@ -22,7 +22,7 @@ export default {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

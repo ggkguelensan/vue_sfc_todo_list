@@ -1,26 +1,25 @@
 <template>
   <div class="todoinput container">
-      <input type="text" placeholder="TODO item input" @keydown.enter="new_item">
-      <button :disabled="is_disables">+</button>
+    <input
+      id="inputcom"
+      type="text"
+      placeholder="TODO item input"
+      @keydown.enter="$emit('add-new-item')"
+    />
+    <button :disabled="is_disables" @click="$emit('add-new-item')">+</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ToDoInput',
-  methods: {
-    new_item: function () {
-    }
-  },
-  data () {
+  name: "ToDoInput",
+  props: ["inputedtext"],
+  data() {
     return {
-      is_disables: true
-    }
+      is_disables: false
+    };
   }
-}
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>
+<style scoped></style>
