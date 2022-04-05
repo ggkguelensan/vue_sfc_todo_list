@@ -15,4 +15,13 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.button {
+  border: none;
+  border-radius: 2px;
+}
+
+.button-close {
+  background-color: red;
+}
+</style>

@@ -11,10 +11,19 @@
 </template>
 
 <script>
+// multy-word component name
 import ToDoItem from './ToDoItem'
+
 export default {
   name: 'ToDoList',
-  props: ['todo_list'],
+  // detaild prop definition
+  props: {
+    todo_list: {
+      type: Array,
+      required: true,
+      validator: value => Array.isArray(value)
+    }
+  },
   components: {
     ToDoItem
   },

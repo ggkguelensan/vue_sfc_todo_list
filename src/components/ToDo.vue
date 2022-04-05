@@ -4,14 +4,15 @@
     <ToDoInput @todo__input__add-new-item="add_new_item"/>
     <ToDoCntl @todo__cntl__set-state="set_cntl_state"/>
     <ToDoList
-    @todo__item__delete-item-by-id="delete_item_by_id"
-    @todo__item__set-item-status-by-id="set_item_status_by_id"
-    :todo_list="todo_list_filtered"
+      @todo__item__delete-item-by-id="delete_item_by_id"
+      @todo__item__set-item-status-by-id="set_item_status_by_id"
+      :todo_list="todo_list_filtered"
     />
   </div>
 </template>
 
 <script>
+// multy-word component names
 import ToDoList from './ToDoList'
 import ToDoInput from './ToDoInput'
 import ToDoCntl from './ToDoCntl'
