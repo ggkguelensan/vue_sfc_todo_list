@@ -61,9 +61,11 @@ export default {
     set_cntl_state (state) {
       this.cntl_state = state
     },
-    delete_item_by_id () {
+    delete_item_by_id (id) {
+      this.todo_list = this.todo_list.filter(item => item.id !== id)
     },
-    set_item_status_by_id () {
+    set_item_status_by_id (id, active) {
+      this.todo_list.find(item => item.id === id).active = active
     }
   },
   computed: {

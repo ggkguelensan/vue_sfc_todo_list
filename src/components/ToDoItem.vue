@@ -1,9 +1,13 @@
 <template>
-  <div class="todo__item container">
-    <input type="checkbox" :checked="!item.active"/>
+  <li class="todo__item container">
+    <input
+      type="checkbox"
+      :checked="!item.active"
+      @change="$emit('todo__item__set-item-status-by-id', item.id, !item.active)"
+    />
     <p>{{ item.text }}</p>
-    <button @click="add ">X</button>
-  </div>
+    <button @click="$emit('todo__item__delete-item-by-id', item.id)">X</button>
+  </li>
 </template>
 
 <script>
@@ -18,7 +22,7 @@ export default {
 
 <style scoped>
 li {
-  display: inline-block;
-  margin: 0 10px;
+  padding: 10px;
+  margin: 10px 0;
 }
 </style>
