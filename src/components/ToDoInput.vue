@@ -6,7 +6,7 @@
       v-model.trim="new_item_text"
       @keydown.enter="add_new_item"
     />
-    <button :disabled="is_disables" @click="add_new_item">+</button>
+    <button :disabled="!new_item_text" @click="add_new_item">+</button>
   </div>
 </template>
 
@@ -16,7 +16,6 @@ export default {
   props: ['inputedtext'],
   data () {
     return {
-      is_disables: false,
       new_item_text: ''
     }
   },

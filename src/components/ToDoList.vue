@@ -1,6 +1,6 @@
 <template>
   <div class="todolist container">
-    <ToDoItem v-for="item in todolist" :item="item" :key="item.id" />
+    <ToDoItem v-for="item in todo_list" :item="item" :key="item.id" />
   </div>
 </template>
 
@@ -8,9 +8,9 @@
 import ToDoItem from './ToDoItem'
 export default {
   name: 'ToDoList',
-  props: ['todolist'],
+  props: ['todo_list'],
   components: {
-    ToDoItem: ToDoItem
+    ToDoItem
   },
   data () {
     return {}

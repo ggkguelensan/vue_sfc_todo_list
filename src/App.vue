@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ToDo />
+    <ToDo :api_href="api.todo_api" />
   </div>
 </template>
 
@@ -9,8 +9,15 @@ import ToDo from './components/ToDo'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      api: {
+        todo_api: 'https://my-json-server.typicode.com/falk20/demo/todos'
+      }
+    }
+  },
   components: {
-    ToDo: ToDo
+    ToDo
   }
 }
 </script>
