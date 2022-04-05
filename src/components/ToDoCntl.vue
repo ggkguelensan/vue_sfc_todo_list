@@ -1,5 +1,5 @@
 <template>
-  <div class="todocntl container">
+  <div class="todo__cntl container">
     <button @click="$emit('todo__cntl__set-state', 'active')">Active</button>
     <button @click="$emit('todo__cntl__set-state', 'all')">All</button>
     <button @click="$emit('todo__cntl__set-state', 'completed')">Completed</button>

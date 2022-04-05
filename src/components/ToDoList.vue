@@ -1,5 +1,5 @@
 <template>
-  <div class="todolist container">
+  <div class="todo__list container">
     <ToDoItem v-for="item in todo_list" :item="item" :key="item.id" />
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="todoinput container">
+  <div class="todo__input container">
     <input
       type="text"
       placeholder="TODO item input"

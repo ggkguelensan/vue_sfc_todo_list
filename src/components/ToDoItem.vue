@@ -1,8 +1,8 @@
 <template>
-  <div class="todoitem container">
+  <div class="todo__item container">
     <input type="checkbox" :checked="!item.active"/>
     <p>{{ item.text }}</p>
-    <button>X</button>
+    <button @click="add ">X</button>
   </div>
 </template>
 
