@@ -13,7 +13,9 @@
 <script>
 export default {
   name: 'ToDoItem',
-  props: ['item'],
+  props: {
+    item: Object
+  },
   data () {
     return {}
   }

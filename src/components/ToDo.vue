@@ -26,7 +26,9 @@ function errorHandler (response) {
 
 export default {
   name: 'ToDo',
-  props: ['api_href'],
+  props: {
+    api_href: String
+  },
   components: {
     // компонент принимаюйщий ввод из формы
     ToDoInput,

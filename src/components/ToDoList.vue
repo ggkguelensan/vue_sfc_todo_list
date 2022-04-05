@@ -18,11 +18,7 @@ export default {
   name: 'ToDoList',
   // detaild prop definition
   props: {
-    todo_list: {
-      type: Array,
-      required: true,
-      validator: value => Array.isArray(value)
-    }
+    todo_list: Array
   },
   components: {
     ToDoItem

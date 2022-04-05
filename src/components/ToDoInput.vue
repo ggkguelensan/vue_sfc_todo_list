@@ -16,7 +16,6 @@
 <script>
 export default {
   name: 'ToDoInput',
-  props: ['inputedtext'],
   data () {
     return {
       new_item_text: ''
