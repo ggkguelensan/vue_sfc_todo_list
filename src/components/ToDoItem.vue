@@ -1,6 +1,6 @@
 <template>
   <div class="todoitem container">
-    <input type="checkbox" v-model="completed" @change="doneEdit" />
+    <input type="checkbox" :checked="!item.active"/>
     <p>{{ item.text }}</p>
     <button>X</button>
   </div>

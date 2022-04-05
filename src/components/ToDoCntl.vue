@@ -1,6 +1,6 @@
 <template>
   <div class="todocntl container">
-    <button>Active</button>
+    <button @click="$emit('set-state')">Active</button>
     <button>All</button>
     <button>Completed</button>
   </div>
