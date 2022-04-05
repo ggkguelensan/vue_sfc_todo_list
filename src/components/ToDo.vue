@@ -12,6 +12,13 @@ import ToDoList from './ToDoList'
 import ToDoInput from './ToDoInput'
 import ToDoCntl from './ToDoCntl'
 
+function errorHandler (response) {
+  if (!response.ok) {
+    throw Error(response.status)
+  }
+  return response
+}
+
 export default {
   name: 'ToDo',
   props: ['api_href'],
@@ -27,20 +34,22 @@ export default {
     return {
       // перепишется при вызове created
       todo_list: [
-        { id: 0, text: 'Item text 1', active: true },
-        { id: 1, text: 'Item text 2', active: false },
-        { id: 2, text: 'Item text 3', active: true },
-        { id: 3, text: 'Item text 4', active: false },
-        { id: 4, text: 'Item text 5', active: true }
+        { id: 1, text: 'Fetch error item text 1', active: true },
+        { id: 2, text: 'Fetch error item text 2', active: false },
+        { id: 3, text: 'Fetch error item text 3', active: true },
+        { id: 4, text: 'Fetch error item text 4', active: false },
+        { id: 5, text: 'Fetch error item text 5', active: true }
       ],
-      cntl_state: 'all'
+      cntl_state: 'all',
+      last_id: 5
     }
   },
   methods: {
     // handler обрабатывающий создание нового item и добавление нового item в список todo_list
     add_new_item (item) {
+      this.last_id++
       this.todo_list.push({
-        id: this.todo_list.length + 1,
+        id: this.last_id,
         text: item.text,
         active: item.active
       })
@@ -51,23 +60,22 @@ export default {
   },
   computed: {
     todo_list_filtered () {
-      let result = []
-      if (this.cntl_state === 'all') {
-        result = this.todo_list
-      } else if (this.cntl_state === 'active') {
-        result = this.todo_list.filter(item => item.active === true)
-      } else {
-        result = this.todo_list.filter(item => item.active === false)
-      }
-      return result
+      if (this.cntl_state === 'active') return this.todo_list.filter(item => item.active === true)
+      if (this.cntl_state === 'completed') return this.todo_list.filter(item => item.active === false)
+      return this.todo_list
     }
   },
   created () {
-    fetch(this.api_href)
-      .then(response => response.json())
-      .then(data => {
-        this.todo_list = data
-      })
+    if (this.api_href) {
+      fetch(this.api_href)
+        .then(errorHandler)
+        .then(responce => responce.json())
+        .then(data => {
+          this.todo_list = data
+          this.last_id = data.length
+        })
+        .catch(error => console.log(error))
+    }
   }
 }
 </script>
